@@ -1,0 +1,25 @@
+
+tiny array times 
+insert 67.417 μs
+append 100.875 μs
+
+small array times 
+insert 71.041 μs
+append 193.834 μs
+
+medium array times
+insert 324.25 μs
+append 295.458 μs
+
+large array times
+insert 7.71225 ms
+append 419.416 μs
+
+extra large array times 
+insert 773.968417 ms
+append 2.400583 ms
+
+Read over the results, and write a paragraph that explains the pattern you see. How does each function “scale”? Which of the two functions scales better? How can you tell?
+
+As the size of the array grows so does the time each function. The runtime of the insert function grows drastically while the time of the append function barely sees an increase. From an array of size 10 to an array of size 100000 it increases from 100.875 μs to append 2.400583 ms. The insert function increases from 67.417 μs to 773.968417 ms, which is much more drastic. We can see that the append function scales much better than that of the insert. This is because in order to unshift something we need to move all of the following numbers and this eventually becomes excessive. Interestingly the insert function has a bettter runtime when the array is relativly small. If we are doing anything of scale we would prefer to append it. You can tell by the run time as well as by what each function is doing. 
+
